@@ -1,0 +1,32 @@
+input[type=text] {
+    border: 12px solid green;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+input[type=text]::placeholder {
+    color: rgb(105, 7, 94);
+}
+
+input[type=text]:focus {
+    color: red;
+    border: 12px solid blue;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+h1 {
+    color: blue;
+}
+
+h1:hover {
+    color: green;
+}
+
+.donkey {
+    background-color: antiquewhite;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
