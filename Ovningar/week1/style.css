@@ -5,7 +5,7 @@
 
 .falling_bild {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
     justify-content: space-between; /* Space them evenly from top to bottom */
     height: 100vh; /* Optional: Make the container fill the full height of the viewport */
 }
