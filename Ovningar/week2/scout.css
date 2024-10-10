@@ -1,0 +1,43 @@
+body{
+    background-image: url(biler/scout_3.jpg);
+    align-self: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 12px solid green;
+    border-radius: 12px;
+    padding: 5% 10%;
+}
+
+h1, h2{
+    color:darkgreen;
+    background-color: beige;
+    display: flex; 
+    align-self: center; 
+    justify-content: center;
+}
+
+button{
+    align-self: center;
+    border: 5px solid green;
+    border-radius: 12px;
+    padding: 10px;
+    font-style: italic;
+    background-color: aqua;
+    
+}
+
+.delare{
+    background-color: beige; 
+    display: flex; 
+    justify-content: space-evenly; 
+    padding: 25px;
+    border: 12px solid green;
+    border-radius: 12px;
+}
+
+.del{
+    width: 45%;
+    border: 12px solid green;
+    border-radius: 12px;
+}
