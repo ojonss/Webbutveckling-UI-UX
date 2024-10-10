@@ -1,0 +1,120 @@
+.headGrid{
+    display:grid;
+    grid-template: 5em 1fr / 1fr 1fr;
+}
+
+.headDiv{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.grid1{
+    width: 50em;
+    height: 50em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+}
+
+.square1-1 {
+    background-color: floralwhite;
+}
+
+.square1-2 {
+    background-color: maroon;
+}
+
+.square1-3 {
+    background-color: lightseagreen;
+}
+
+.square1-4 {
+    background-color: coral;
+}
+
+.square1-5 {
+    background-color: darkslateblue;
+}
+
+.square2-1 {
+    background-color: lightgoldenrodyellow;
+}
+
+.square2-2 {
+    background-color: tomato;
+}
+
+.square2-3 {
+    background-color: mediumorchid;
+}
+
+.square2-4 {
+    background-color: steelblue;
+}
+
+.square2-5 {
+    background-color: limegreen;
+}
+
+.square3-1 {
+    background-color: peru;
+}
+
+.square3-2 {
+    background-color: turquoise;
+}
+
+.square3-3 {
+    background-color: lavenderblush;
+}
+
+.square3-4 {
+    background-color: firebrick;
+}
+
+.square3-5 {
+    background-color: mediumseagreen;
+}
+
+.square4-1 {
+    background-color: goldenrod;
+}
+
+.square4-2 {
+    background-color: royalblue;
+}
+
+.square4-3 {
+    background-color: mediumvioletred;
+}
+
+.square4-4 {
+    background-color: lightcoral;
+}
+
+.square4-5 {
+    background-color: darkorange;
+}
+
+.square5-1 {
+    background-color: darkkhaki;
+}
+
+.square5-2 {
+    background-color: rebeccapurple;
+}
+
+.square5-3 {
+    background-color: dodgerblue;
+}
+
+.square5-4 {
+    background-color: palevioletred;
+}
+
+.square5-5 {
+    background-color: darkcyan;
+}

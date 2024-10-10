@@ -1,0 +1,127 @@
+body{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/*header*/
+header{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar {
+  grid-row: 1;
+  grid-column: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+  justify-content:space-evenly;
+  
+}
+.navbar nav a {
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 21px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    
+}
+tr:not(.navbar-button-1, .navbar-button-6) {
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 21px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background:linear-gradient(
+        to top,
+        rgb(87, 222, 234) 0%,
+        rgb(87, 222, 234) 35%,
+        rgb(4, 81, 119) 50%,
+        rgb(55, 52, 230) 25%
+        
+    )
+}
+
+
+
+.navbar-button-1 {
+    position: absolute;
+    left:5%;
+    top: 0%; 
+}
+
+.navbar-button-2 {
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(10, 170, 170);
+    
+}
+
+.navbar-button-3 {
+    background-color: rgb(10, 170, 170);
+}
+
+.navbar-button-4 {
+    background-color: rgb(10, 170, 170);
+}
+
+.navbar-button-5 {
+    background-color: rgb(10, 170, 170);
+}
+
+.navbar-button-6 {
+
+    background-color: rgb(10, 170, 170); 
+    position: absolute;
+    right:5%;
+    top: 5%;
+}
+
+.helpbar{
+    display: grid;
+    grid-column: 3fr 1fr;
+    background-color: gray;
+}
+
+.helpbar2{
+    grid-column: 2;
+}
+
+
+/*Main*/
+
+.welcome{
+    background-image: url(https://www.datocms-assets.com/91872/1702474694-chas-academy-hero-homepage.jpg?fit=clamp&fm=webp);
+    background-size: cover;
+    display: block;
+    height: 100vh;
+
+    text-align:center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.welcome h1{
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px #b3b3b3;
+
+}
+
+.ydreLink
+{
+    height:20vh;
+    
+}
+
+/*Footer*/
+
+footer{
+    display: grid;
+    grid-row: 1;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center; 
+}
