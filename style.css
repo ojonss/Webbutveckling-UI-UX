@@ -1,4 +1,75 @@
-p {
-    font-size: 60px;
-    color: rgb(255, 0, 0);
-  }
+/* General reset */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Parallax backgrounds */
+.parallax-1 {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(bilder/cool_tavla.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.parallax-2 {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(bilder/Skord_pic_1.jpeg);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* Header styles */
+header {
+  background-color: beige;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+/* Main content container */
+.main-content {
+  background-color: beige;
+  width: 75%;
+  margin: auto;
+  padding: 5%;
+}
+
+/* Article and figure layout */
+.article-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-section {
+  width: 45%;
+}
+
+.article-figure {
+  width: 45%;
+}
+
+.article-figure img {
+  width: 50%;
+  height: auto;
+}
+
+/* Empty div for spacing */
+.spacer {
+  height: 100vh;
+}
+
+/* Footer styles */
+footer {
+  background-color: beige;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px;
+}
