@@ -1,25 +1,33 @@
-.headGrid{
-    display:grid;
+.headGrid {
+    display: grid;
     grid-template: 5em 1fr / 1fr 1fr;
 }
 
-.headDiv{
+.headDiv {
     grid-column-start: 1;
     grid-column-end: 3;
     display: flex;
     justify-content: center;
 }
 
-.grid1{
-    width: 50em;
-    height: 50em;
+.grid1 {
+    width: 40vw;
+    aspect-ratio: 1 / 1;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     justify-content: center;
+    align-self: center;
+    border: 5px solid black;
 }
 
-:root{
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
     --color-first: rgb(128, 0, 0);
     --color-last: rgb(50, 205, 50);
 }
@@ -62,7 +70,7 @@
 
 .square2-5 {
     background-color: var(--color-last);
-    
+
 }
 
 .square3-1 {
@@ -99,13 +107,13 @@
 
 .square4-4 {
     background-color: lightcoral;
-    color:black;
+    color: black;
     transition: background-color 1s ease, color 1.5s ease;
 }
 
 .square4-4:hover {
     background-color: rgb(14, 16, 155);
-    color:white;
+    color: white;
 }
 
 .square4-5 {
@@ -132,12 +140,17 @@
     background-color: darkcyan;
 }
 
-@keyframes change-color{
-    from{background-color: var(--color-first);}
-    to{background-color: var(--color-last);}
+@keyframes change-color {
+    from {
+        background-color: var(--color-first);
+    }
+
+    to {
+        background-color: var(--color-last);
+    }
 }
 
-.color-animation-test{
+.color-animation-test {
     animation-name: change-color;
     animation-duration: 4s;
     animation-iteration-count: infinite;

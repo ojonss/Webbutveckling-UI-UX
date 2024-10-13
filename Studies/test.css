@@ -1,0 +1,52 @@
+:root{
+}
+
+header {
+    background-color: beige;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column; 
+    align-self: center;
+    align-items: center; 
+    text-align: center;
+    border-radius: 3em;
+    width:fit-content;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin: 0; 
+}
+
+.menuGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 1em; 
+    padding: 0 5vw;
+    margin-top: 1em;
+}
+
+.menuGrid a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    background-color: #3498db; /* Default button color */
+    padding: 0.5em 1em; /* Add padding for button-like appearance */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text inside button */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+    display: flex; /* Make buttons fill their grid space */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+.menuGrid a:nth-child(1) { background-color: #3498db; } /* Blue button */
+.menuGrid a:nth-child(2) { background-color: #e67e22; } /* Orange button */
+.menuGrid a:nth-child(3) { background-color: #2ecc71; } /* Green button */
+.menuGrid a:nth-child(4) { background-color: #9b59b6; } /* Purple button */
+.menuGrid a:nth-child(5) { background-color: #e74c3c; } /* Red button */
+
+.menuGrid a:hover {
+    background-color: #555; /* Darker color on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}

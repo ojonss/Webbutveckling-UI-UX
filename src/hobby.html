@@ -4,25 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hobby.css" type="text/css">
     <title>Hobby</title>
 </head>
 
-<body style="background-color: blanchedalmond;">
+<body>
 
-    <header style="background-color: beige;">
-        <h1 style="text-align: center">Portfolio Oskar Jonsson</h1>
-        <div style="display: flex; justify-content: space-evenly; text-align: center;">
-            <a href="../index.html">HEM</a>
-            <a href="projekt.html">TIDIGARE PROJEKT</a>
-            <a href="utb_jobb.html">Utbildning & Jobb</a>
-            <a href="cv.html">Min resumé</a>
-            <a href="hobby.html">Hobby & Fritid</a>
-        </div>
+    <header>
+        <h1>Portfolio Oskar Jonsson</h1>
+        <article class="menuGrid">
+            <a id="home" href="../index.html">HEM</a>
+            <a id="projects" href="projekt.html">TIDIGARE PROJEKT</a>
+            <a id="education" href="utb_jobb.html">Utbildning & Jobb</a>
+            <a id="resume" href="cv.html">Min resumé</a>
+            <a id="hobby" href="hobby.html">Hobby & Fritid</a>
+        </article>
     </header>
-    <div style="background-color: beige; width:75%; margin:auto; padding: 5%;">
-        <h1 style="text-align: center">Warhammer40K</h1>
-        <article style="display: flex; justify-content: space-between; align-items: center;">
-            <section style="width: 45%;">
+
+    <div class="content-container">
+        <h1>Warhammer40K</h1>
+        <article class="content">
+            <section>
                 <h3><b>Kort sammanfattning om Warhammer universumet: </b></h3>
                 <p>
                     <strong>Warhammer 40K</strong> is a dark, dystopian sci-fi universe set 40,000 years in the future.
@@ -54,29 +56,25 @@
                     En spelrunda tar någonstans mellan 2-3h beroende på hur insatt man är i regler och hur mycket man spelat tidigare.
                 </p>
             </section>
-            <figure style="width: 45%;">
-                <img src="../bilder/WH40k_pic_1.jpg" alt="Chaos Marines" style="width: 50%; height: auto;">
+            <figure>
+                <img src="../bilder/WH40k_pic_1.jpg" alt="Chaos Marines">
                 <figcaption>Chaos Space Marines: Chosen</figcaption>
             </figure>
         </article>
 
-        <h1 style="text-align: center">DnD</h1>
-        <article style="display: flex; justify-content: space-between; align-items: center;">
-            <section style="width: 45%;">
+        <h1>DnD</h1>
+        <article class="content">
+            <section>
                 <h3><b>Kort sammanfattning av DnD kampanjen jag håller i nu</b></h3>
                 <p>
                     <strong>Tomb of Annihilation</strong> is a <strong>Dungeons & Dragons</strong> adventure set in the
-                    deadly
-                    jungle peninsula of <strong>Chult</strong>. A mysterious curse is causing people who were
-                    resurrected to
-                    slowly wither and die. Adventurers must explore dangerous jungles, fight undead, and discover the
-                    source
-                    of the curse — the <strong>Soulmonger</strong>, an evil artifact hidden within the deadly
+                    deadly jungle peninsula of <strong>Chult</strong>. A mysterious curse is causing people who were
+                    resurrected to slowly wither and die. Adventurers must explore dangerous jungles, fight undead, and discover the
+                    source of the curse — the <strong>Soulmonger</strong>, an evil artifact hidden within the deadly
                     <strong>Tomb of the Nine Gods</strong>.
                     <br><br>
                     The adventure is full of traps, challenging monsters, and survival elements, with a heavy focus on
-                    exploration.
-                    It's known for its high difficulty and potential for character death.
+                    exploration. It's known for its high difficulty and potential for character death.
                 </p>
                 <hr>
                 <p>
@@ -95,43 +93,38 @@
                     etc
                 </p>
             </section>
-            <figure style="width: 45%;">
-                <img src="../bilder/DnD_pic_1.jpg" alt="DnD book and map" style="width: 50%; height: auto;">
+            <figure>
+                <img src="../bilder/DnD_pic_1.jpg" alt="DnD book and map">
                 <figcaption>Karta och bok till DnD kampanjen</figcaption>
             </figure>
         </article>
 
-        <h1 style="text-align: center">Skidor</h1>
-        <article style="display: flex; justify-content: space-between; align-items: center;">
-            <section style="width: 45%;">
-                <p>
-                    Försöker åka skidor varje år. Gillar både utför och längd. Har även kört snowboard när jag var
-                    yngre.
-                </p>
+        <h1>Skidor</h1>
+        <article class="content">
+            <section>
+                <p>Försöker åka skidor varje år. Gillar både utför och längd. Har även kört snowboard när jag var yngre.</p>
             </section>
-            <figure style="width: 45%;">
-                <img src="../bilder/Skiing_pic_1.jpeg" alt="Längd skidor" style="width: 50%; height: auto;">
+            <figure>
+                <img src="../bilder/Skiing_pic_1.jpeg" alt="Längd skidor">
                 <figcaption>Linköpings GK's längdspår - 2024</figcaption>
             </figure>
         </article>
 
-        <h1 style="text-align: center">Golf</h1>
-        <article style="display: flex; justify-content: space-between; align-items: center;">
-            <section style="width: 45%;">
-                <p>
-                    Kör golf nästan varje vecka. Medlem på Linköpings GK. Är tycker det är kul och skönt att komma ut.
+        <h1>Golf</h1>
+        <article class="content">
+            <section>
+                <p>Kör golf nästan varje vecka. Medlem på Linköpings GK. Är tycker det är kul och skönt att komma ut.
                     Kanske inte är den bästa på det, och har svårt att komma ner i handikap. Men kul är det ändå.
                     Spelar mycket med min bror.
                 </p>
             </section>
-
-            <figure style="width: 45%;">
-                <img src="../bilder/Golf_pic_1.jpeg" alt="Två golfare" style="width: 50%; height: auto;">
+            <figure>
+                <img src="../bilder/Golf_pic_1.jpeg" alt="Två golfare">
                 <figcaption>Ombergs Golfbana, sommar 23</figcaption>
             </figure>
         </article>
         <hr>
-        <div style="display:flex; flex-direction:column; align-items: center; padding-top: 50px;">
+        <div class="video-container">
             <video width="640" height="360" controls>
                 <source src="../bilder/golf_video_1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -142,21 +135,18 @@
             </p>
         </div>
     </div>
-    <footer
-        style="background-color: beige; display: flex; justify-content: space-evenly; padding: 25px;">
+    <footer>
         <div>
             <h3>Follow Me</h3>
             <a href="https://github.com/ojonss" target="_blank">Follow me on GitHub</a>
         </div>
         <div>
             <h3>My info</h3>
-            <p>
             <ul>
                 <li><b>Email: </b><a href="mailto:oskar.jonsson@chasacademy.se">oskar.jonsson@chasacademy.se</a></li>
                 <li><b>Nummer: </b>123456789</li>
                 <li><b>Adress: </b>123, Stora Gula Huset, Linköping</li>
             </ul>
-            </p>
         </div>
     </footer>
 
