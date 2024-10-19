@@ -1,4 +1,4 @@
-:root{
+:root {
     --widthSize: 70vmin;
 }
 
@@ -11,17 +11,18 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #000; /* Optional: set a background color for contrast */
+    background-color: #000;
+    /* Optional: set a background color for contrast */
 }
 
 .grid-player {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
-    aspect-ratio: 1 / 1; 
-    width: 70vmin; 
-    height: 70vmin; 
-    gap: 2px; 
+    aspect-ratio: 1 / 1;
+    width: 70vmin;
+    height: 70vmin;
+    gap: 2px;
     margin: 20px auto;
 }
 
@@ -34,32 +35,32 @@ body {
     gap: 2px;
 }
 
-#grid-container-info{
+.grid-container-info {
     background-color: aqua;
-    margin-top:2vh;
+    margin-top: 2vh;
     width: var(--widthSize);
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-radius: 4em;
 }
 
-#player-info{
-
+#player-info {
+    color: blueviolet;
 }
 
-#player-inventory{
-
+#player-inventory {
+    color: blueviolet;
 }
 
-#player-eventlog{
-
+#player-eventlog {
+    color: blueviolet;
 }
 
 .cell {
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     padding: 1em;
     border: 1px solid #000;
     background-color: lightgray;
@@ -91,21 +92,16 @@ body {
     color: white;
 }
 
-.neverBeenHere-position{
+.neverBeenHere-position {
     background-color: #000;
 }
 
-.beenHereBefore-position{
+.beenHereBefore-position {
     background-color: darkgray;
 }
 
-/*  Används denna verkligen?! idk  */
-.hide {
-    display: none;
-}
-
-.generateMenu{
-    display:flex;
+.generateMenu {
+    display: flex;
 }
 
 .combatDisplay {
@@ -135,5 +131,5 @@ body {
 }
 
 .hidden {
-    display:none;
+    display: none !important;
 }

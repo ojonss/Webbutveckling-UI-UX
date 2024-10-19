@@ -8,6 +8,8 @@ class Actor {
         this.gold = 0;
         this.hitChance = 0;
         this.damage = 0;
+
+        
     }
 
     getThrowDice(type) {
@@ -57,17 +59,21 @@ class Actor {
     }
 
     death() {
-        // Drop gold, game over logic can go here
-        console.log(this.name + "has died.");
+        const showPlayerInfo = document.querySelector('.grid-container-info');
+        showPlayerInfo.classList.add('hidden');
+        const hideMainMenu = document.querySelector('.generateMenu');
+        hideMainMenu.classList.remove('hidden');
+        document.getElementById("grid-container").classList.add("hidden");
     }
 }
 
 class Player extends Actor {
     constructor() {
         super("Maximus");
+        this.slayCounter = 0;
         this.level = 1;
-        this.maxHealth = 33;
-        this.health = 33;
+        this.maxHealth = 1;
+        this.health = 1;
         this.armor = 16;
         this.gold = 300;
         this.hitChance = 12;

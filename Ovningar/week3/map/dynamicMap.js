@@ -10,8 +10,11 @@ function initializeMap() {
         // Create the full map
         const fullMap = new MapPlacement(width, height);
 
-        const apa = document.querySelector('.generateMenu');
-        apa.classList.add('hidden');
+        const showPlayerInfo = document.querySelector('.grid-container-info');
+        showPlayerInfo.classList.remove('hidden');
+        const hideMainMenu = document.querySelector('.generateMenu');
+        hideMainMenu.classList.add('hidden');
+        document.getElementById("grid-container").classList.remove("hidden");
 
 
         // Game starts here

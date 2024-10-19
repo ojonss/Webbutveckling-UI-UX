@@ -2,18 +2,18 @@ class Combat {
     constructor(player, enemy) {
         this.player = player;
         this.enemy = enemy;
-    
+
         this.currentTurn = "player";
         this.combatInProgress = true;
         this.onEndCallback = null;
-    
+
         this.clearCombatMessages();
         this.logToCombatHeader(this.player.name + " encounters " + this.enemy.name + "! Combat starts!");
         this.logToCombatDisplay("Press \"spacebar\" to progress");
 
         this.handleTurn = this.handleTurn.bind(this);
         document.addEventListener("keydown", this.handleTurn);
-    
+
         this.showElements();
         this.displayStatus();
     }
@@ -75,7 +75,12 @@ class Combat {
 
     endCombatMessage() {
         if (this.player.health <= 0) {
-            this.logToCombatDisplay(this.player.name + " has been defeated...");
+            this.clearCombatMessages();
+            this.logToCombatHeader(this.player.name + " has been defeated...");
+            this.logToCombatDisplay(this.player.name + " slayed: " + this.player.slayCounter + " number of enemies!");
+            this.logToCombatDisplay(this.player.name + " had: " + this.player.getGold() + " gold when they died!");
+            this.logToCombatDisplay(this.player.name + " was level " + this.player.level + " when they fell!");
+            this.logToCombatDisplay("TO-DO: Step counter?");
             this.player.death();
         } else if (this.enemy.health <= 0) {
             var goldLoot = this.enemy.getGold();
@@ -83,8 +88,9 @@ class Combat {
             this.logToCombatDisplay("You found " + goldLoot + " gold on the enemy.");
             this.player.addGold(goldLoot);
             this.logToCombatDisplay("You now have " + this.player.getGold() + " amount of gold.");
+            this.player.slayCounter++;
         }
-        this.logToCombatDisplay("Press \"Spacebar\" to end combat.");
+        this.logToCombatDisplay("Press \"Spacebar\" to continue.");
     }
 
     endCombat() {
@@ -123,7 +129,7 @@ class Combat {
         combatText.appendChild(newHeader);
         console.log(message);
     }
-    
+
     logToCombatDisplay(message) {
         const combatText = document.getElementById("combat-text");
         const newMessage = document.createElement("p");
