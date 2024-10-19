@@ -13,7 +13,6 @@ body {
     flex-direction: column;
     background-color: #000;
     color:chocolate;
-    /* Optional: set a background color for contrast */
 }
 
 .grid-player {
@@ -102,7 +101,24 @@ body {
 }
 
 .generateMenu {
-    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vmin;
+    background-color: rgb(241, 255, 192);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    gap: 2vh;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(253, 2, 2, 0.3);
+    z-index: 1;
+    border-radius: 8em;
+    font-size: 1em;
 }
 
 .combatDisplay {

@@ -10,13 +10,25 @@
 
 <body>
     <div class="generateMenu">
-        <label for="playerName">Player Name:</label>
-        <input type="text" id="playerName" placeholder="Enter your name" value="Maximus">
-        <label for="gridWidth">Grid Width:</label>
-        <input type="number" id="gridWidth" value="15" min="9">
-        <label for="gridHeight">Grid Height:</label>
-        <input type="number" id="gridHeight" value="15" min="9">
-        <button onclick="initializeMap()">Create Map</button>
+        <div style="grid-column: span 2;">
+            <h3>Welcome to my simple <strong>javaScript-goblin-slaying-game</strong></h3>
+            <p>It's a work in progress...</p>
+        </div>
+        <div style="grid-column: 1; grid-row: 2;">
+            <label for="playerName">Player Name:</label>
+            <input type="text" id="playerName" placeholder="Enter your name" value="Maximus" style="width: 50%;">
+        </div>
+        <div style="grid-column: 1; grid-row: 3;">
+            <label for="gridWidth">Grid Width:</label>
+            <input type="number" id="gridWidth" value="15" min="9" style="width: 50%;">
+        </div>
+        <div style="grid-column: 1; grid-row: 4;">
+            <label for="gridHeight">Grid Height:</label>
+            <input type="number" id="gridHeight" value="15" min="9" style="width: 50%;">
+        </div>
+        <div style="grid-column: 2; grid-row: 2 / span 2;">
+            <button onclick="initializeMap()">Create Map</button>
+        </div>
     </div>
     <div id="grid-container" class="hidden"> </div>
     <div class="grid-container-info hidden">
@@ -26,7 +38,8 @@
         </div>
         <div id="player-eventlog">
             <p>TO:DO<br>Save the last 5 events here in array
-            <br>Newest to oldest, bubble event and remove oldest.</p>
+                <br>Newest to oldest, bubble event and remove oldest.
+            </p>
         </div>
     </div>
     <!-- 
