@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIZZBUZZZ MA'h GUY</title>
+    <style>
+        div{
+            display: flex;
+            align-items: center;
+            margin: auto;
+            width: 100%;
+            height: 100%; 
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <script>
+
+        var userNumber = prompt("Insert number", "0");
+        var num = parseInt(userNumber);
+        let fizz = "fizz";
+        var fizzCount = 0;
+        let buzz = "buzz";
+        var buzzCount = 0;
+        let fizzbuzz = "fizzbuzz";
+        var fizzbuzzCount = 0;
+
+        let i = 1;
+        while (i <= num) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log(fizzbuzz);
+                fizzbuzzCount++;
+            }
+            else if (i % 3 === 0) {
+                console.log(fizz);
+                fizzCount++;
+            }
+            else if (i % 5 === 0) {
+                console.log(buzz);
+                buzzCount++;
+            }
+            else {
+                console.log(i);
+            }
+            i++;
+        }
+        console.log("Fizzbuzz: " + fizzbuzzCount + ", fizz: " + fizzCount + ", buzz: " + buzzCount)
+
+    </script>
+</body>
+
+</html>
