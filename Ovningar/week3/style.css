@@ -9,10 +9,19 @@
     margin: 20px auto;
 }
 
+#grid-container {
+    width: 70vmin;
+    height: auto;
+    aspect-ratio: 1/1;
+    display: grid;
+    gap: 2px;
+}
+
 .cell {
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 1 / 1; 
     padding: 1em;
     border: 1px solid #000;
     background-color: lightgray;
@@ -42,6 +51,14 @@
 .player-position {
     background-color: red;
     color: white;
+}
+
+.neverBeenHere-position{
+    background-color: #000;
+}
+
+.beenHereBefore-position{
+    background-color: darkgray;
 }
 
 .hide {
