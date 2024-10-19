@@ -68,8 +68,8 @@ class Actor {
 }
 
 class Player extends Actor {
-    constructor() {
-        super("Maximus");
+    constructor(name = document.getElementById("playerName").value) {
+        super(name); // Use the name provided or default to "Maximus"
         this.slayCounter = 0;
         this.level = 1;
         this.maxHealth = 1;

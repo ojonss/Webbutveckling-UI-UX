@@ -80,7 +80,9 @@ class Combat {
             this.logToCombatDisplay(this.player.name + " slayed: " + this.player.slayCounter + " number of enemies!");
             this.logToCombatDisplay(this.player.name + " had: " + this.player.getGold() + " gold when they died!");
             this.logToCombatDisplay(this.player.name + " was level " + this.player.level + " when they fell!");
-            this.logToCombatDisplay("TO-DO: Step counter?");
+            this.logToCombatDisplay("TO-DO:");
+            this.logToCombatDisplay("Can actually level up");
+            this.logToCombatDisplay("Step counter?");
             this.player.death();
         } else if (this.enemy.health <= 0) {
             var goldLoot = this.enemy.getGold();
