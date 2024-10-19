@@ -16,28 +16,44 @@ class Movement {
 
     updateViewport() {
         const [playerX, playerY] = this.playerPosition;
-
-        const viewport = this.map.getViewport(playerX, playerY, this.playerGridSize);
-
+        const halfGrid = Math.floor(this.playerGridSize / 2);
+    
         const gridContainer = document.getElementById("grid-container");
         gridContainer.innerHTML = "";
         gridContainer.style.gridTemplateColumns = `repeat(${this.playerGridSize}, 1fr)`;
         gridContainer.style.gridTemplateRows = `repeat(${this.playerGridSize}, 1fr)`;
-
+    
         for (let y = 0; y < this.playerGridSize; y++) {
             for (let x = 0; x < this.playerGridSize; x++) {
                 const cell = document.createElement("div");
                 cell.classList.add("cell");
-
-                if (x === Math.floor(this.playerGridSize / 2) && y === Math.floor(this.playerGridSize / 2)) {
-                    cell.classList.add("player-position"); 
+    
+                // Calculate the actual map coordinates, clamping them within map boundaries
+                let mapX = playerX - halfGrid + x;
+                let mapY = playerY - halfGrid + y;
+    
+                // Adjust mapX and mapY to not go out of bounds (clamp within the full map size)
+                if (mapX < 0) mapX = 0;
+                if (mapX >= this.map.fullWidth) mapX = this.map.fullWidth - 1;
+                if (mapY < 0) mapY = 0;
+                if (mapY >= this.map.fullHeight) mapY = this.map.fullHeight - 1;
+    
+                // If the coordinates are out of bounds, add the hidden class
+                if (mapX < 0 || mapX >= this.map.fullWidth || mapY < 0 || mapY >= this.map.fullHeight) {
+                    cell.classList.add("hidden");
+                } else {
+                    // If the player is at the center of the grid, mark it
+                    if (x === halfGrid && y === halfGrid) {
+                        cell.classList.add("player-position");
+                    }
+    
+                    // Get the item at the specific map coordinates
+                    const item = this.map.getItemAtPosition(mapX, mapY);
+                    if (item) {
+                        cell.classList.add(item + "-position");
+                    }
                 }
-
-                const item = viewport[y][x];
-                if (item) {
-                    cell.classList.add(item + "-position");
-                }
-
+    
                 gridContainer.appendChild(cell);
             }
         }
@@ -76,18 +92,18 @@ class Movement {
 
         if (encounteredItem === null) {
             this.playerPosition = [x, y];
-            this.updateViewport(); 
+            this.updateViewport();
         } else if (encounteredItem === "wall") {
             console.log("Can't move there, wall.");
         } else if (encounteredItem === "merchant") {
             this.playerPosition = [x, y];
-            this.updateViewport(); 
+            this.updateViewport();
         } else if (encounteredItem === "loot") {
             this.playerPosition = [x, y];
-            this.updateViewport(); 
+            this.updateViewport();
         } else if (encounteredItem === "enemy") {
             this.playerPosition = [x, y];
-            this.updateViewport(); 
+            this.updateViewport();
             this.startCombat();
         } else {
             console.log("Player cannot move outside the grid");

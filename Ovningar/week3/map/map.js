@@ -6,8 +6,9 @@ class MapPlacement {
 
         // Adjust item counts dynamically based on full map size
         this.numberOfEnemies = Math.floor((this.fullHeight * this.fullWidth) * 0.075);
-        this.numberOfMerchants = Math.floor((this.fullHeight * this.fullWidth) * 0.021);
-        this.numberOfLoots = Math.floor((this.fullHeight * this.fullWidth) * 0.021);
+        // Ensure that atleast 1 merchant spawns on 9x9 field
+        this.numberOfMerchants = Math.floor((this.fullHeight * this.fullWidth) * 0.012346);
+        this.numberOfLoots = Math.floor((this.fullHeight * this.fullWidth) * 0.0247);
         this.numberOfWalls = Math.floor((this.fullHeight * this.fullWidth) * 0.3);
 
         this.placeItems("enemy", this.numberOfEnemies);
