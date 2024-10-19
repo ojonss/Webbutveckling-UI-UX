@@ -4,10 +4,10 @@ class MapPlacement {
         this.gridHeight = 7;
         this.itemIndexMap = Array.from({ length: this.gridWidth }, () => Array(this.gridHeight).fill(null));
 
-        this.numberOfEnemies = 3;
-        this.numberOfMerchants = 1;
-        this.numberOfLoots = 1;
-        this.numberOfWalls = 10;
+        this.numberOfEnemies = Math.floor((this.gridHeight * this.gridWidth) * 0.075);
+        this.numberOfMerchants = Math.floor((this.gridHeight * this.gridWidth) * 0.021);
+        this.numberOfLoots = Math.floor((this.gridHeight * this.gridWidth) * 0.021);
+        this.numberOfWalls = Math.floor((this.gridHeight * this.gridWidth) * 0.3);
 
         this.placeItems("enemy", this.numberOfEnemies);
         this.placeItems("merchant", this.numberOfMerchants);
