@@ -1,0 +1,89 @@
+class Actor {
+    constructor(actorName) {
+        this.name = actorName;
+        this.level = 1;
+        this.maxHealth = 1;
+        this.health = 1;
+        this.armor = 1;
+        this.gold = 0;
+        this.hitChance = 0;
+        this.damage = 0;
+    }
+
+    getThrowDice(type) {
+        let randomDice = Math.floor(Math.random() * 20) + type;
+        return randomDice;
+    }
+
+    addGold(amount) {
+        this.gold += amount;
+    }
+
+    getGold() {
+        return this.gold;
+    }
+
+    hitAttack(targetArmor) {
+        let hit = this.getThrowDice(this.hitChance);
+        if (hit >= targetArmor) {
+            return this.damage;
+        }
+        return 0;
+    }
+
+    doDamage() {
+        return this.damage;
+    }
+
+    getArmor() {
+        return this.armor;
+    }
+
+    takingDamage(amount) {
+        this.health -= amount;
+        if (this.health <= 0) {
+            console.log(this.name + "is dead.");
+        } else {
+            return this.health;
+        }
+    }
+
+    healingDamage(amount) {
+        this.health += amount;
+        if (this.health > this.maxHealth) {
+            this.health = this.maxHealth;
+        }
+        return this.health;
+    }
+
+    death() {
+        // Drop gold, game over logic can go here
+        console.log(this.name + "has died.");
+    }
+}
+
+class Player extends Actor {
+    constructor() {
+        super("Maximus");
+        this.level = 1;
+        this.maxHealth = 33;
+        this.health = 33;
+        this.armor = 16;
+        this.gold = 300;
+        this.hitChance = 12;
+        this.damage = 4 + Math.floor(Math.random() * 6); 
+    }
+}
+
+class goblin extends Actor {
+    constructor() {
+        super("tinyGoblin");
+        this.level = 1;
+        this.maxHealth = 12;
+        this.health = 12;
+        this.armor = 8;
+        this.gold = 20 + Math.floor(Math.random() * 30);
+        this.hitChance = 8;
+        this.damage = 2 + Math.floor(Math.random() * 3);
+    }
+}

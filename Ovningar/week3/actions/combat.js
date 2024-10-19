@@ -1,0 +1,131 @@
+class Combat {
+    constructor(player, enemy) {
+        this.player = player;
+        this.enemy = enemy;
+
+        this.currentTurn = "player";
+        this.combatInProgress = true;
+        this.onEndCallback = null;
+
+        this.logToCombatDisplay(this.player.name + " encounters " + this.enemy.name + "! Combat starts!"); // Show encounter message
+        this.logToCombatDisplay(`Press "spacebar" to progress`);
+
+        this.handleTurn = this.handleTurn.bind(this);
+        document.addEventListener("keydown", this.handleTurn);
+
+        this.showElements();
+        this.displayStatus();
+    }
+
+    displayStatus() {
+        this.logToCombatDisplay(this.player.name + " Health: " + this.player.health);
+        this.logToCombatDisplay(this.enemy.name + " Health: " + this.enemy.health);
+    }
+
+    handleTurn(event) {
+        const SPACEBAR = 32;
+        if (event.which != SPACEBAR || !this.combatInProgress) {
+            return;
+        }
+
+        if (this.currentTurn === "player") {
+            this.playerTurn();
+        }
+        else if (this.currentTurn === "enemy") {
+            this.enemyTurn();
+        }
+        else if (this.currentTurn === "CombatOver") {
+            this.endCombat();
+        }
+        this.displayStatus();
+
+        if ((this.player.health <= 0 || this.enemy.health <= 0) && this.currentTurn != "CombatOver") {
+            this.currentTurn = "CombatOver";
+            this.endCombatMessage();
+
+        }
+    }
+
+    playerTurn() {
+        const damage = this.player.hitAttack(this.enemy.getArmor());
+        if (damage > 0) {
+            this.logToCombatDisplay(this.player.name + " hits " + this.enemy.name + " for " + damage + " damage!");
+            this.enemy.takingDamage(damage);
+        } else {
+            this.logToCombatDisplay(this.player.name + " missed!");
+        }
+
+        this.currentTurn = "enemy";
+    }
+
+    enemyTurn() {
+        const damage = this.enemy.hitAttack(this.player.getArmor());
+        if (damage > 0) {
+            this.logToCombatDisplay(this.enemy.name + " hits " + this.player.name + " for " + damage + " damage!");
+            this.player.takingDamage(damage);
+        } else {
+            this.logToCombatDisplay(this.enemy.name + " missed!");
+        }
+
+        this.currentTurn = "player";
+    }
+
+    endCombatMessage() {
+        if (this.player.health <= 0) {
+            this.logToCombatDisplay(this.player.name + " has been defeated...");
+            this.player.death();
+        } else if (this.enemy.health <= 0) {
+            var goldLoot = this.enemy.getGold();
+            this.logToCombatDisplay(this.enemy.name + " is defeated!");
+            this.logToCombatDisplay("You found " + goldLoot + " gold on the enemy.");
+            this.player.addGold(goldLoot);
+            this.logToCombatDisplay("You now have " + this.player.getGold() + " amount of gold.");
+        }
+        this.logToCombatDisplay("Press \"Spacebar\" to end combat.");
+    }
+
+    endCombat() {
+        this.combatInProgress = false;
+        document.removeEventListener("keydown", this.handleTurn);
+
+        this.hideElements();
+        this.clearCombatMessages();
+
+        if (typeof this.onEndCallback === "function") {
+            this.onEndCallback();
+        }
+    }
+
+    onCombatEnd(callback) {
+        this.onEndCallback = callback;
+    }
+
+    showElements() {
+        console.log("SHOW");
+        const apa = document.querySelector('.test');
+        apa.classList.remove('hidden');
+    }
+
+    hideElements() {
+        console.log("HIDE");
+        const apa = document.querySelector('.test');
+        apa.classList.add('hidden');
+    }
+
+    logToCombatDisplay(message) {
+        const combatText = document.getElementById("combat-text");
+        const newMessage = document.createElement("p");
+        newMessage.textContent = message; // Set the text content to the message
+        combatText.appendChild(newMessage); // Append the new paragraph to the combat text div
+        console.log(message); // Log to console for debugging
+    }
+
+    logToConsole(message) {
+        console.log(message); // Changed to logging to console instead of combat display
+    }
+
+    clearCombatMessages() {
+        const combatText = document.getElementById("combat-text");
+        combatText.innerHTML = ""; // Clear all inner HTML (removes all messages)
+    }
+}
