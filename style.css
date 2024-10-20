@@ -67,7 +67,7 @@ header h1 {
 
 .main-content {
   background-color: beige;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
   padding: 5em;
   margin-top: 5vh;
@@ -96,7 +96,7 @@ footer {
   padding: 25px;
   align-self: center;
   border-radius: 3em;
-  width:fit-content;
+  width: fit-content;
   max-width: 80vw;
   margin: 0 auto;
   gap: 5vw;

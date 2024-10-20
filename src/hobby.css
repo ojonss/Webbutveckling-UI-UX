@@ -68,7 +68,7 @@ body {
   .content-container {
     
     background-color: beige;
-    width: 75%;
+    width: 80%;
     margin: auto;
     padding: 5%;
     margin-top: 5vh;
@@ -99,7 +99,6 @@ figure img {
 }
 
 figure figcaption {
-    text-align: center;
     font-style: italic;
 }
 
