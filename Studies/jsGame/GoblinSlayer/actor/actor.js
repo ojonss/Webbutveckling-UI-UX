@@ -86,12 +86,12 @@ class goblin extends Actor {
     constructor() {
         super("tinyGoblin");
         this.level = 1;
-        this.maxHealth = 12;
-        this.health = 12;
+        this.maxHealth = 15;
+        this.health = this.maxHealth;
         this.armor = 8;
         this.gold = 20 + Math.floor(Math.random() * 30);
-        this.hitChance = 8;
+        this.hitChance = 9;
         this.damage = 2;
-        this.damageRNG = Math.floor(Math.random() * 3);
+        this.damageRNG = Math.floor(Math.random() * 4);
     }
 }
