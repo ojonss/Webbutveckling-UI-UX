@@ -15,8 +15,41 @@
             <p>It's a work in progress...</p>
         </div>
         <div style="grid-column: 1; grid-row: 2;">
-            <label for="playerName">Player Name:</label>
-            <input type="text" id="playerName" placeholder="Enter your name" value="Maximus" style="width: 50%;">
+            <div class="extraRow">
+                <div style="grid-row: 1;">
+                    <label for="playerName">Player Name:</label>
+                    <input type="text" id="playerName" placeholder="Enter your name" value="Maximus" style="width: 50%;">
+                </div>
+                <div style="grid-row:2;">
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown()" class="dropbtn">Cheat Options</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <div>
+                                <label for="playerHealth">Player start HP:</label>
+                                <input type="text" id="playerHealth" placeholder="33" value="33" style="width: 50%;">
+                            </div>
+                            <div>
+                                <label for="playerGold">Player start Gold:</label>
+                                <input type="text" id="playerGold" placeholder="50" value="50" style="width: 50%;">
+                            </div>
+                            <div>
+                                <label for="playerArmor">Player start Armor:</label>
+                                <input type="text" id="playerArmor" placeholder="14" value="14" style="width: 50%;">
+                            </div>
+                            <div>
+                                <label for="playerDamage">Player base Damage:</label>
+                                <input type="text" id="playerDamage" placeholder="4" value="4" style="width: 25%;">
+                                <input type="text" id="playerDamageRNG" placeholder="+ 1d6" value="6" style="width: 25%;">
+                            </div>
+                            <div>
+                                <label for="playerHit">Player base hit:</label>
+                                <input type="text" id="playerHit" placeholder="10" value="10" style="width: 50%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
         <div style="grid-column: 1; grid-row: 3;">
             <label for="gridWidth">Grid Width:</label>
@@ -106,6 +139,7 @@
     </div>
 
     <script src="actor/actor.js"></script>
+    <script src="messageBox/msgBoxFunc.js"></script>
     <script src="map/dynamicMap.js"></script>
     <script src="map/map.js"></script>
     <script src="actions/combat.js"></script>

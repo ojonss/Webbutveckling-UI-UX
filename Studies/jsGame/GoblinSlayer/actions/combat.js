@@ -102,6 +102,8 @@ class Combat {
         this.hideElements();
         this.clearCombatMessages();
 
+        playerInfoBox(this.player);
+
         if (typeof this.onEndCallback === "function") {
             this.onEndCallback();
         }

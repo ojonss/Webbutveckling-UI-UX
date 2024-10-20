@@ -13,7 +13,7 @@ class Actor {
     }
 
     getThrowDice(type) {
-        let randomDice = Math.floor(Math.random() * 20) + type;
+        let randomDice = (Math.floor(Math.random() * 20) + type) - 10;
         return randomDice;
     }
 
@@ -27,7 +27,7 @@ class Actor {
 
     hitAttack(targetArmor) {
         let hit = this.getThrowDice(this.hitChance);
-        if (hit >= targetArmor) {
+        if (parseInt(hit, 10) > parseInt(targetArmor, 10)) {
             return this.damage;
         }
         return 0;
@@ -72,12 +72,12 @@ class Player extends Actor {
         super(name); // Use the name provided or default to "Maximus"
         this.slayCounter = 0;
         this.level = 1;
-        this.maxHealth = 1;
-        this.health = 1;
-        this.armor = 16;
-        this.gold = 300;
-        this.hitChance = 12;
-        this.damage = 4 + Math.floor(Math.random() * 6); 
+        this.maxHealth = parseInt(document.getElementById("playerHealth").value, 10);
+        this.health = parseInt(this.maxHealth, 10);
+        this.armor = parseInt(document.getElementById("playerArmor").value, 10);
+        this.gold = parseInt(document.getElementById("playerGold").value, 10);
+        this.hitChance = parseInt(document.getElementById("playerHit").value, 10);
+        this.damage = parseInt(document.getElementById("playerDamage").value, 10) + Math.floor(Math.random() * parseInt(document.getElementById("playerDamageRNG").value, 10)); 
     }
 }
 
