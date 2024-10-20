@@ -11,11 +11,9 @@ function initializeMap() {
         const fullMap = new MapPlacement(width, height);
         // Create a new player instance
         const player = new Player(document.getElementById("playerName").value);
-        player.maxHealth = parseInt(document.getElementById("playerHealth").value, 10);
-        player.health = player.maxHealth;
         playerInfoBox(player);
 
-
+        // hides and unhides things on the screen
         const showPlayerInfo = document.querySelector('.grid-container-info');
         showPlayerInfo.classList.remove('hidden');
         const hideMainMenu = document.querySelector('.generateMenu');
@@ -28,8 +26,7 @@ function initializeMap() {
     }
 }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+// toggle dropdown
 function toggleDropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }

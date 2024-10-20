@@ -49,6 +49,7 @@ class Combat {
         }
     }
 
+    // TO:DO maybe two diffrent attacks, one better hit but lower damage? Use two seperate keys
     playerTurn() {
         const damage = this.player.hitAttack(this.enemy.getArmor());
         if (damage > 0) {
@@ -125,6 +126,8 @@ class Combat {
         apa.classList.add('hidden');
     }
 
+
+    //replace with function in msgBoxFunction.js also create a .js for usefull functions
     logToCombatHeader(message) {
         const combatText = document.getElementById("combat-text");
 
@@ -134,6 +137,7 @@ class Combat {
         console.log(message);
     }
 
+    //replace with function in msgBoxFunction.js also create a .js for usefull functions
     logToCombatDisplay(message) {
         const combatText = document.getElementById("combat-text");
         const newMessage = document.createElement("p");
@@ -146,11 +150,13 @@ class Combat {
         console.log(message);
     }
 
+    //replace with function in msgBoxFunction.js also create a .js for usefull functions
     clearCombatMessages() {
         const combatText = document.getElementById("combat-text");
         combatText.innerHTML = "";
     }
 
+    // Remove <p> text so during combat, there is only one message active
     clearCombatParagraphs() {
         const combatText = document.getElementById("combat-text");
         const paragraphs = combatText.querySelectorAll("p");

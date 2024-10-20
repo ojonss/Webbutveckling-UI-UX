@@ -1,7 +1,8 @@
 class MapPlacement {
-    constructor(fullWidth = 20, fullHeight = 20) { // Assume the larger map dimensions
+    constructor(fullWidth = 9, fullHeight = 9) {
         this.fullWidth = fullWidth;
         this.fullHeight = fullHeight;
+        /*Create 2D array based on  */
         this.itemIndexMap = Array.from({ length: this.fullHeight }, () => Array(this.fullWidth).fill(null));
 
         // Adjust item counts dynamically based on full map size
@@ -17,6 +18,7 @@ class MapPlacement {
         this.placeItems("wall", this.numberOfWalls);
     }
 
+    /* check so [y] in itemIndexMap isn't null. Then checks so [y][x] is a valid position*/
     checkItemPosition(x, y) {
         return this.itemIndexMap[y] && this.itemIndexMap[y][x] === null;
     }
@@ -45,6 +47,13 @@ class MapPlacement {
         }
     }
 
+    
+}
+
+
+
+
+/*
     // New method: Get the 7x7 viewport centered around the player's position
     getViewport(centerX, centerY, size = 7) {
         const halfSize = Math.floor(size / 2);
@@ -61,9 +70,7 @@ class MapPlacement {
         }
         return viewport;
     }
-}
-
-
+        */
 /*class MapPlacement {
     constructor(gridWidth = 7, gridHeight = 7) {
         this.gridWidth = gridWidth;

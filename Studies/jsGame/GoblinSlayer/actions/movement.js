@@ -1,6 +1,6 @@
 class Movement {
     constructor(map, playerGridSize = 9) {
-        this.map = map; // The full map grid
+        this.map = map;
         this.playerGridSize = playerGridSize;
         this.playerPosition = [
             Math.floor(map.fullWidth / 2),

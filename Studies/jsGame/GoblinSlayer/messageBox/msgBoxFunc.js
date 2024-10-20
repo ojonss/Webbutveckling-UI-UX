@@ -1,3 +1,4 @@
+/*Write message in box below playfield*/ 
 function playerInfoBox(player){
     clearText('player-info');
 
@@ -6,6 +7,7 @@ function playerInfoBox(player){
     writePText("ARMOR: " + player.armor, 'player-info')
 }
 
+/*Usefull functions*/
 function clearText(whereToPlaceText){
     const text = document.getElementById(whereToPlaceText);
     text.innerHTML = "";
