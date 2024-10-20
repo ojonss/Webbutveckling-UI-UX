@@ -51,8 +51,9 @@ class Combat {
 
     // TO:DO maybe two diffrent attacks, one better hit but lower damage? Use two seperate keys
     playerTurn() {
-        const damage = this.player.hitAttack(this.enemy.getArmor());
-        if (damage > 0) {
+        const hit = this.player.hitAttack(this.enemy.getArmor());
+        if (hit) {
+            var damage = this.player.getDamage();
             this.logToCombatDisplay(this.player.name + " hits " + this.enemy.name + " for " + damage + " damage!");
             this.enemy.takingDamage(damage);
         } else {
@@ -63,8 +64,9 @@ class Combat {
     }
 
     enemyTurn() {
-        const damage = this.enemy.hitAttack(this.player.getArmor());
-        if (damage > 0) {
+        const hit = this.enemy.hitAttack(this.player.getArmor());
+        if (hit) {
+            var damage = this.enemy.getDamage();
             this.logToCombatDisplay(this.enemy.name + " hits " + this.player.name + " for " + damage + " damage!");
             this.player.takingDamage(damage);
         } else {
@@ -115,13 +117,11 @@ class Combat {
     }
 
     showElements() {
-        console.log("SHOW");
         const apa = document.querySelector('.combatDisplay');
         apa.classList.remove('hidden');
     }
 
     hideElements() {
-        console.log("HIDE");
         const apa = document.querySelector('.combatDisplay');
         apa.classList.add('hidden');
     }
@@ -134,7 +134,6 @@ class Combat {
         const newHeader = document.createElement("h1");
         newHeader.textContent = message;
         combatText.appendChild(newHeader);
-        console.log(message);
     }
 
     //replace with function in msgBoxFunction.js also create a .js for usefull functions
@@ -143,11 +142,6 @@ class Combat {
         const newMessage = document.createElement("p");
         newMessage.textContent = message;
         combatText.appendChild(newMessage);
-        console.log(message);
-    }
-
-    logToConsole(message) {
-        console.log(message);
     }
 
     //replace with function in msgBoxFunction.js also create a .js for usefull functions

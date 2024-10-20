@@ -1,0 +1,160 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: beige;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column; 
+    align-self: center;
+    align-items: center; 
+    text-align: center;
+    border-radius: 3em;
+    width:fit-content;
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  
+  header h1 {
+    margin: 0; 
+  }
+  
+  .menuGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 1em; 
+    padding: 0 5vw;
+    margin-top: 1em;
+  }
+  
+  .menuGrid a {
+    text-decoration: none;
+    color: white;
+    background-color: #3498db;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #home { 
+    background-color: #3498db;
+  }
+  
+  #projects { 
+    background-color: #e67e22;
+  }
+  
+  #education { 
+    background-color: #2ecc71;
+  }
+  
+  #resume { 
+    background-color: #9b59b6;
+  }
+  
+  #hobby { 
+    background-color: #e74c3c;
+  }
+
+  .content-container {
+    
+    background-color: beige;
+    width: 80%;
+    margin: auto;
+    padding: 5%;
+    margin-top: 5vh;
+    border-radius: 5em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    width: 55%;
+}
+
+figure {
+    width: 35%;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figure figcaption {
+    font-style: italic;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+hr {
+    margin: 1em 0;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.video-container p {
+    text-align: center;
+}
+
+footer {
+    text-decoration: none;
+    background-color: beige;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+    align-self: center;
+    border-radius: 3em;
+    width:fit-content;
+    max-width: 80vw;
+    margin: 0 auto;
+    gap: 5vw;
+    margin-top: 5vh;
+  }
+  
+  footer h3 {
+    margin-top: 0;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease;
+  }

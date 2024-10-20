@@ -117,7 +117,6 @@ class Movement {
         let [x, y] = this.playerPosition;
         combat.onCombatEnd(() => {
             this.inCombat = false;
-            console.log("Combat has ended. You can move again.");
             this.map.setItemAtPosition(x, y, null);
         });
     }

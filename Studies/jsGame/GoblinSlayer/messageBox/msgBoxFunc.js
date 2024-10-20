@@ -18,5 +18,4 @@ function writePText(message, whereToPlaceText){
     const newText = document.createElement("p");
     newText.textContent = message;
     text.appendChild(newText);
-    console.log("IN: msgBoxFunc.js: writePText " + message)
 }

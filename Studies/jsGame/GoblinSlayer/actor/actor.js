@@ -8,8 +8,9 @@ class Actor {
         this.gold = 0;
         this.hitChance = 0;
         this.damage = 0;
+        this.damageRNG = 0;
 
-        
+
     }
 
     getThrowDice(type) {
@@ -28,13 +29,15 @@ class Actor {
     hitAttack(targetArmor) {
         let hit = this.getThrowDice(this.hitChance);
         if (parseInt(hit, 10) > parseInt(targetArmor, 10)) {
-            return this.damage;
+            return true;
         }
-        return 0;
+        return false;
     }
 
-    doDamage() {
-        return this.damage;
+    getDamage() {
+        var damage = this.damage + Math.floor(Math.random() * this.damageRNG) + 1;
+        console.log("actor.js: " + this.name + " did " + damage + " amount of damage");
+        return damage;
     }
 
     getArmor() {
@@ -43,11 +46,8 @@ class Actor {
 
     takingDamage(amount) {
         this.health -= amount;
-        if (this.health <= 0) {
-            console.log(this.name + "is dead.");
-        } else {
-            return this.health;
-        }
+        return this.health;
+
     }
 
     healingDamage(amount) {
@@ -77,7 +77,8 @@ class Player extends Actor {
         this.armor = parseInt(document.getElementById("playerArmor").value, 10);
         this.gold = parseInt(document.getElementById("playerGold").value, 10);
         this.hitChance = parseInt(document.getElementById("playerHit").value, 10);
-        this.damage = parseInt(document.getElementById("playerDamage").value, 10) + Math.floor(Math.random() * parseInt(document.getElementById("playerDamageRNG").value, 10)); 
+        this.damage = parseInt(document.getElementById("playerDamage").value, 10);
+        this.damageRNG = parseInt(document.getElementById("playerDamageRNG").value, 10);
     }
 }
 
@@ -90,6 +91,7 @@ class goblin extends Actor {
         this.armor = 8;
         this.gold = 20 + Math.floor(Math.random() * 30);
         this.hitChance = 8;
-        this.damage = 2 + Math.floor(Math.random() * 3);
+        this.damage = 2;
+        this.damageRNG = Math.floor(Math.random() * 3);
     }
 }
