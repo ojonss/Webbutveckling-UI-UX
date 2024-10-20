@@ -11,14 +11,16 @@
 <body>
     <div class="generateMenu">
         <div style="grid-column: span 2;">
-            <h3>Welcome to my simple <strong>javaScript-goblin-slaying-game</strong></h3>
-            <p>It's a work in progress...</p>
+            <h3>simple <strong>javaScript-goblin-slaying-game</strong></h3>
+            <p>It's a work in progress...<br>
+                move with 'arrow keys', fight with 'spacebar'</p>
         </div>
         <div style="grid-column: 1; grid-row: 2;">
             <div class="extraRow">
                 <div style="grid-row: 1;">
                     <label for="playerName">Player Name:</label>
-                    <input type="text" id="playerName" placeholder="Enter your name" value="Maximus" style="width: 50%;">
+                    <input type="text" id="playerName" placeholder="Enter your name" value="Maximus"
+                        style="width: 50%;">
                 </div>
                 <div style="grid-row:2;">
                     <div class="dropdown">
@@ -39,7 +41,8 @@
                             <div>
                                 <label for="playerDamage">Player base Damage:</label>
                                 <input type="text" id="playerDamage" placeholder="4" value="4" style="width: 25%;">
-                                <input type="text" id="playerDamageRNG" placeholder="+ 1d6" value="6" style="width: 25%;">
+                                <input type="text" id="playerDamageRNG" placeholder="+ 1d6" value="6"
+                                    style="width: 25%;">
                             </div>
                             <div>
                                 <label for="playerHit">Player base hit:</label>
@@ -61,6 +64,13 @@
         </div>
         <div style="grid-column: 2; grid-row: 2 / span 2;">
             <button onclick="initializeMap()">Create Map</button>
+        </div>
+        <div style="grid-column: 2; grid-row: 4; text-align: left;">
+            <p>Work in progress / TO:DO<br>Help button, to explain how to play<br>
+                Working merchant and loot mechanic<br>
+                Better visuals<br>
+                Win condition?</p>
+            </p>
         </div>
     </div>
     <div id="grid-container" class="hidden"> </div>

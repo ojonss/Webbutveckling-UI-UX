@@ -92,7 +92,10 @@ body {
 }
 
 .player-position {
-    background-color: red;
+    background-image: url('images/HERO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     color: white;
 }
 
