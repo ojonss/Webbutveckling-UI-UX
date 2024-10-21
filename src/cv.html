@@ -5,39 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
+    <link rel="stylesheet" href="hobby.css" type="text/css">
 </head>
 
-<body style="background-color: blanchedalmond;">
+<body>
 
-    <header style="background-color: beige;">
-        <h1 style="text-align: center">Portfolio Oskar Jonsson</h1>
-        <div style="display: flex; justify-content: space-evenly; text-align: center;">
-            <a href="../index.html">HEM</a>
-            <a href="projekt.html">TIDIGARE PROJEKT</a>
-            <a href="utb_jobb.html">Utbildning & Jobb</a>
-            <a href="cv.html">Min resumé</a>
-            <a href="hobby.html">Hobby & Fritid</a>
-        </div>
+    <header>
+        <h1>Portfolio Oskar Jonsson</h1>
+        <article class="menuGrid">
+            <a id="home" href="../index.html">HEM</a>
+            <a id="projects" href="projekt.html">SPEL</a>
+            <a id="education" href="utb_jobb.html">Utbildning & Jobb</a>
+            <a id="resume" href="cv.html">Min resumé</a>
+            <a id="hobby" href="hobby.html">Hobby & Fritid</a>
+        </article>
     </header>
-    <div style="background-color: beige; width:75%; margin:auto; padding: 5%;">
+    <article class="content-container">
         <embed src="../bilder/Resumé.pdf" style="width: 100%; height: 1000px;" type="application/pdf">
-
-    </div>
-    <footer
-        style="background-color: beige; display: flex; justify-content: space-evenly; padding: 25px;">
+    </article>
+    <footer>
         <div>
             <h3>Follow Me</h3>
             <a href="https://github.com/ojonss" target="_blank">Follow me on GitHub</a>
         </div>
         <div>
             <h3>My info</h3>
-            <p>
             <ul>
                 <li><b>Email: </b><a href="mailto:oskar.jonsson@chasacademy.se">oskar.jonsson@chasacademy.se</a></li>
                 <li><b>Nummer: </b>123456789</li>
                 <li><b>Adress: </b>123, Stora Gula Huset, Linköping</li>
             </ul>
-            </p>
         </div>
     </footer>
 </body>
