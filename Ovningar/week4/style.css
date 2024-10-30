@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+.displayData{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-top: 10%;
+    width: 60vw;
+    height: 60vh;
+    background-color: rgb(103, 204, 170);
+}
